@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Politique de confidentialité — Trente30</title>
+  <meta name="description" content="Comment Trente30 traite tes données : tout reste sur ton téléphone.">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="./">Trente<span>30</span></a>
+      <nav class="site" aria-label="Navigation">
+        <a href="support.html">Support</a>
+        <a href="confidentialite.html" aria-current="page">Confidentialité</a>
+      </nav>
+    </header>
+
+    <main class="doc">
+      <h1>Politique de confidentialité</h1>
+      <p class="updated">Dernière mise à jour : <span class="todo">[À compléter : date de publication]</span></p>
+
+      <div class="note">En bref : Trente30 n'a pas de compte utilisateur et aucun serveur ne stocke tes activités. Tes séances, tes photos et tes visuels restent sur ton téléphone. Nous n'utilisons ni publicité, ni outil de mesure d'audience, ni traceur.</div>
+
+      <h2>1. Qui est responsable de tes données</h2>
+      <p>L'application Trente30 et ce site sont édités par <span class="todo">[À compléter : nom ou raison sociale, adresse]</span>, responsable du traitement au sens du Règlement général sur la protection des données (RGPD).</p>
+      <p>Contact pour toute question sur tes données : <span class="todo">[À compléter : adresse e-mail]</span>.</p>
+
+      <h2>2. Les données que l'application utilise</h2>
+
+      <h3>Tes activités Strava</h3>
+      <p>Quand tu connectes ton compte Strava, l'application lit, avec ton autorisation (accès « read » et « activity:read_all ») :</p>
+      <ul>
+        <li>la liste de tes 30 dernières activités (titre, date, sport, distance, durée…) ;</li>
+        <li>le détail des activités que tu ouvres : description, tours (laps), tracé GPS et données de la séance (allure, fréquence cardiaque, puissance, cadence, altitude).</li>
+      </ul>
+      <p>Ces données sont récupérées <strong>directement depuis ton téléphone</strong> auprès de Strava. Elles servent uniquement à créer tes visuels et ne sont montrées qu'à toi. Le détail des activités ouvertes est conservé en cache <strong>sur ton téléphone</strong> pour éviter de le retélécharger ; il est supprimé quand tu te déconnectes de Strava ou quand tu supprimes l'application. Elles ne sont jamais envoyées sur un serveur de Trente30, jamais revendues, et ne servent à entraîner aucune intelligence artificielle.</p>
+
+      <h3>La connexion à Strava (jetons d'accès)</h3>
+      <p>Pour te connecter, Strava fournit à l'application un code temporaire. Pour l'échanger contre des jetons d'accès, et plus tard pour les renouveler, l'application passe par une petite fonction en ligne exploitée par Trente30 chez Cloudflare. C'est le seul composant serveur de Trente30 : il ajoute la clé secrète de l'application (qui ne doit pas être stockée sur ton téléphone) et transmet la réponse de Strava. Il <strong>ne stocke ni ne journalise</strong> tes jetons, et ne reçoit aucune de tes activités. Comme pour tout service en ligne, Cloudflare traite techniquement ces requêtes (adresse IP notamment).</p>
+      <p>Les jetons d'accès, ton identifiant Strava et ton prénom sont ensuite enregistrés dans le trousseau sécurisé d'iOS, sur ton téléphone uniquement.</p>
+
+      <h3>Tes photos</h3>
+      <p>Si tu choisis une photo comme fond, l'application n'accède qu'à la photo que tu sélectionnes, via le sélecteur de photos d'iOS. Pour enregistrer un visuel, elle demande uniquement l'autorisation d'<strong>ajouter</strong> des images à ta photothèque, sans pouvoir la lire. Les photos sont traitées sur ton téléphone et ne sont jamais envoyées ailleurs ; la photo choisie n'est pas conservée par l'application.</p>
+
+      <h3>Tes préférences</h3>
+      <p>Tes réglages (couleur, unités, thème, statistiques affichées, favoris…) sont enregistrés sur ton téléphone.</p>
+
+      <h3>Partage vers Instagram</h3>
+      <p>Quand tu partages en story, l'image est transmise à l'application Instagram installée sur ton téléphone, qui s'ouvre sur l'éditeur de story. Rien n'est publié à ta place : c'est toi qui choisis de publier. L'utilisation d'Instagram est ensuite régie par la politique de confidentialité de Meta.</p>
+
+      <h3>Achats intégrés</h3>
+      <p>Les achats sont payés via l'App Store : Apple traite le paiement selon sa propre politique de confidentialité, et nous ne recevons jamais tes coordonnées bancaires. Pour vérifier et restaurer tes achats, l'application utilise le service RevenueCat, qui reçoit un identifiant anonyme généré par l'application et l'historique de tes achats dans Trente30, sans ton nom ni ton e-mail.</p>
+
+      <h3>Ce que nous ne faisons pas</h3>
+      <ul>
+        <li>Pas de compte Trente30, pas d'inscription, pas d'e-mail demandé.</li>
+        <li>Pas de publicité, pas d'outil d'analyse d'audience, pas de traceur, pas de suivi entre applications.</li>
+        <li>Pas de revente ni de partage de données à des fins commerciales.</li>
+        <li>Ce site n'utilise aucun cookie et ne charge aucune ressource externe.</li>
+      </ul>
+
+      <h2>3. Prestataires</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Prestataire</th><th>Rôle</th><th>Données concernées</th></tr></thead>
+          <tbody>
+            <tr><td>Strava, Inc. (États-Unis)</td><td>Source de tes activités</td><td>Celles de ton compte Strava, selon les autorisations que tu donnes</td></tr>
+            <tr><td>Cloudflare, Inc. (États-Unis)</td><td>Hébergement de la fonction d'échange de jetons</td><td>Code et jetons de connexion Strava (en transit, non stockés), adresse IP</td></tr>
+            <tr><td>Apple Inc.</td><td>App Store, paiement, trousseau iOS</td><td>Achats, selon la politique d'Apple</td></tr>
+            <tr><td>RevenueCat, Inc. (États-Unis)</td><td>Vérification et restauration des achats</td><td>Identifiant anonyme, historique d'achats dans l'app</td></tr>
+            <tr><td>GitHub, Inc. (États-Unis)</td><td>Hébergement de ce site</td><td>Données techniques de connexion (adresse IP)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Certains prestataires sont situés hors de l'Union européenne ; ces transferts sont encadrés par les garanties prévues par le RGPD (notamment le cadre de protection des données UE–États-Unis ou les clauses contractuelles types).</p>
+
+      <h2>4. Bases légales</h2>
+      <ul>
+        <li><strong>Exécution du service que tu demandes</strong> : lecture de tes activités Strava, création des visuels, achats.</li>
+        <li><strong>Ton consentement</strong> : connexion à Strava et accès aux photos, que tu peux retirer à tout moment.</li>
+      </ul>
+
+      <h2>5. Combien de temps</h2>
+      <ul>
+        <li>Activités en cache et jetons Strava : jusqu'à ta déconnexion de Strava dans l'application ou la suppression de l'application.</li>
+        <li>Préférences : jusqu'à la suppression de l'application.</li>
+        <li>Achats : conservés par Apple et RevenueCat le temps nécessaire à leur restauration et aux obligations légales.</li>
+      </ul>
+
+      <h2>6. Supprimer tes données et révoquer l'accès</h2>
+      <ul>
+        <li>Dans l'application : Réglages → « Se déconnecter » révoque l'accès auprès de Strava et efface jetons et cache du téléphone.</li>
+        <li>Sur Strava : Paramètres → Mes applications, puis révoquer l'accès de Trente30.</li>
+        <li>Supprimer l'application efface toutes les données qu'elle a stockées sur ton téléphone.</li>
+      </ul>
+      <p>Comme Trente30 n'a pas de compte ni de base de données d'utilisateurs, il n'y a pas d'autre donnée à supprimer de notre côté.</p>
+
+      <h2>7. Tes droits</h2>
+      <p>Tu disposes d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de tes données, et du droit de retirer ton consentement. Pour les exercer, écris à <span class="todo">[À compléter : adresse e-mail]</span>. Tu peux aussi introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr">www.cnil.fr</a>).</p>
+
+      <h2>8. Mineurs</h2>
+      <p>Trente30 ne s'adresse pas aux enfants de moins de 15 ans et ne collecte sciemment aucune donnée les concernant.</p>
+
+      <h2>9. Modifications</h2>
+      <p>Si cette politique change, la date de mise à jour en haut de page sera modifiée. En cas de changement important (par exemple un nouveau prestataire), nous l'indiquerons aussi dans l'application.</p>
+    </main>
+
+    <footer class="site">
+      <nav aria-label="Liens légaux">
+        <a href="./">Accueil</a>
+        <a href="support.html">Support</a>
+        <a href="conditions.html">Conditions d'utilisation</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </nav>
+      <p>Compatible avec Strava. Strava est une marque de Strava, Inc. Trente30 n'est ni affilié à Strava ni approuvé par Strava.</p>
+    </footer>
+  </div>
+</body>
+</html>
