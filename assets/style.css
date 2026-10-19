@@ -118,3 +118,5 @@ footer.site {
 footer.site nav a { color: var(--muted); margin-right: 14px; text-decoration: none; display: inline-block; margin-bottom: 6px; }
 footer.site nav a:hover { color: var(--text); }
 footer.site p { margin: 10px 0 0; }
+footer.site .strava-logo-line { margin-top: 16px; }
+footer.site img.strava-logo { display: block; width: 218px; height: auto; }

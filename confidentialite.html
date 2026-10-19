@@ -34,9 +34,11 @@
       <p>Quand tu connectes ton compte Strava, l'application lit, avec ton autorisation (accès « read » et « activity:read_all ») :</p>
       <ul>
         <li>la liste de tes 30 dernières activités (titre, date, sport, distance, durée…) ;</li>
-        <li>le détail des activités que tu ouvres : description, tours (laps), tracé GPS et données de la séance (allure, fréquence cardiaque, puissance, cadence, altitude).</li>
+        <li>la liste des résumés de tes activités de la semaine que tu exportes (sport, date, distance, durée, dénivelé : aucun détail de séance), conservée en cache sur ton téléphone, une semaine après l'autre ;</li>
+        <li>tes statistiques cumulées (de l'année en cours et depuis toujours : nombre de sorties, distance, durée et dénivelé en course et en vélo, plus longue sortie vélo, plus grosse ascension), conservées en cache sur ton téléphone ;</li>
+        <li>le détail des activités que tu ouvres : description, tours (laps), segments (nom, temps, classement : nouveaux KOM/QOM et records), tracé GPS et données de la séance (allure, fréquence cardiaque, puissance, cadence, altitude).</li>
       </ul>
-      <p>Ces données sont récupérées <strong>directement depuis ton téléphone</strong> auprès de Strava. Elles servent uniquement à créer tes visuels et ne sont montrées qu'à toi. Le détail des activités ouvertes est conservé en cache <strong>sur ton téléphone</strong> pour éviter de le retélécharger ; il est supprimé quand tu te déconnectes de Strava ou quand tu supprimes l'application. Elles ne sont jamais envoyées sur un serveur de Trente30, jamais revendues, et ne servent à entraîner aucune intelligence artificielle.</p>
+      <p>Ces données sont récupérées <strong>directement depuis ton téléphone</strong> auprès de Strava. Elles servent uniquement à créer tes visuels et ne sont montrées qu'à toi. Le détail des activités ouvertes et les listes hebdomadaires sont conservés en cache <strong>sur ton téléphone</strong> pour éviter de le retélécharger ; il est supprimé quand tu te déconnectes de Strava ou quand tu supprimes l'application. Elles ne sont jamais envoyées sur un serveur de Trente30, jamais revendues, et ne servent à entraîner aucune intelligence artificielle.</p>
 
       <h3>La connexion à Strava (jetons d'accès)</h3>
       <p>Pour te connecter, Strava fournit à l'application un code temporaire. Pour l'échanger contre des jetons d'accès, et plus tard pour les renouveler, l'application passe par une petite fonction en ligne exploitée par Trente30 chez Cloudflare. C'est le seul composant serveur de Trente30 : il ajoute la clé secrète de l'application (qui ne doit pas être stockée sur ton téléphone) et transmet la réponse de Strava. Il <strong>ne stocke ni ne journalise</strong> tes jetons, et ne reçoit aucune de tes activités. Comme pour tout service en ligne, Cloudflare traite techniquement ces requêtes (adresse IP notamment).</p>
@@ -115,6 +117,7 @@
         <a href="conditions.html">Conditions d'utilisation</a>
         <a href="mentions-legales.html">Mentions légales</a>
       </nav>
+      <p class="strava-logo-line"><img class="strava-logo" src="assets/strava/api_logo_cptblWith_strava_horiz_white.svg" width="218" height="18" alt="Compatible with Strava"></p>
       <p>Compatible avec Strava. Strava est une marque de Strava, Inc. Trente30 n'est ni affilié à Strava ni approuvé par Strava.</p>
     </footer>
   </div>
