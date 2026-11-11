@@ -24,9 +24,9 @@
 
     <main class="doc">
       <h1>Privacy policy</h1>
-      <p class="updated">Last updated: October 23, 2026</p>
+      <p class="updated">Last updated: November 10, 2026</p>
 
-      <div class="note">In short: Trente30 has no user account and no server stores your activities. Your workouts, photos and visuals stay on your phone. We use no advertising, no analytics and no trackers.</div>
+      <div class="note">In short: Trente30 has no user account and no server stores your activities. Your workouts, photos and visuals stay on your phone. We use no advertising and no analytics or trackers of our own. Trente30 is available on iPhone (App Store) and on Android (Google Play).</div>
 
       <h2>1. Who is responsible for your data</h2>
       <p>The Trente30 app and this website are published by TecKnologikS, data controller under the General Data Protection Regulation (GDPR).</p>
@@ -45,25 +45,30 @@
       <p>This data is fetched <strong>directly from your phone</strong> from Strava. It is used only to create your visuals and is shown only to you. Opened activities and activity lists are cached <strong>on your phone</strong> for at most 7 days to avoid downloading them again; the cache is erased when you disconnect from Strava or delete the app, and activities deleted or made private on Strava are removed from it. This data is never sent to a Trente30 server, never sold, and never used to train any artificial intelligence.</p>
 
       <h3>Strava sign-in (access tokens)</h3>
-      <p>To sign you in, Strava gives the app a temporary code. To exchange it for access tokens, and later to renew them, the app goes through a small online function run by Trente30 on Cloudflare. It is Trente30’s only server component: it adds the app’s secret key (which must not be stored on your phone) and passes Strava’s response back. It <strong>neither stores nor logs</strong> your tokens, and receives none of your activities. As with any online service, Cloudflare technically processes these requests (including your IP address).</p>
-      <p>Access tokens, your Strava ID and your first name are then stored in the iOS Keychain, on your phone only.</p>
+      <p>To sign you in, Strava gives the app a temporary code. To exchange it for access tokens, and later to renew them, the app goes through a small online function run by Trente30 on Cloudflare. It is Trente30’s only server component: it adds the app’s secret key (which must not be stored on your phone) and passes Strava’s response back. It receives none of your activities and logs nothing. To automatically revoke Trente30’s access when you have not used the app for 30 days, as Strava requires, it keeps only your Strava ID, your renewal token (refresh token), <strong>encrypted</strong>, and the date it was last used. This record is stored with Cloudflare (Workers KV). As with any online service, Cloudflare technically processes these requests (including your IP address).</p>
+      <p>Access tokens, your Strava ID and your first name are then stored on your phone only: in the iOS Keychain on iPhone; on Android, in the app’s private storage, encrypted with AES-GCM under a key held in the Android Keystore that cannot be exported from the phone. On Android, the app opts out of Android backup, so none of this is included in Google backups.</p>
 
       <h3>Your photos</h3>
-      <p>If you choose a photo as a background, the app only accesses the photo you select, through the iOS photo picker. To save a visual (“Save Image” in the share sheet), iOS only asks for permission to <strong>add</strong> images to your photo library, without reading it. Photos are processed on your phone and never sent elsewhere; the chosen photo is not kept by the app.</p>
+      <p>If you choose a photo as a background, the app only accesses the photo you select, through the system photo picker (the iOS photo picker on iPhone, the Android photo picker on Android). On Android, the app requests no storage or photo permission. On iPhone, to save a visual (“Save Image” in the share sheet), iOS only asks for permission to <strong>add</strong> images to your photo library, without reading it. Photos are processed on your phone and never sent elsewhere; the chosen photo is not kept by the app.</p>
 
       <h3>Your preferences</h3>
       <p>Your settings (colors, units, theme, displayed stats, favorites, chosen period…) and your custom compositions are stored on your phone.</p>
 
       <h3>Sharing (Instagram, Messages…)</h3>
-      <p>Sharing uses the iOS share sheet: the image is only passed to the app you choose (Instagram, Messages, Photos…). Nothing is posted on your behalf: you decide what to post. Use of those apps is then governed by their own privacy policies (Meta for Instagram).</p>
+      <p>Sharing uses the system share sheet (iOS or Android): the image is only passed to the app you choose (Instagram, Messages, Photos…). On Android, the exported image is first written to the app’s own cache, then shared from there; the next export replaces it, and uninstalling the app erases it. Nothing is posted on your behalf: you decide what to post. Use of those apps is then governed by their own privacy policies (Meta for Instagram).</p>
 
       <h3>In-app purchases</h3>
-      <p>Purchases are paid through the App Store: Apple processes payment under its own privacy policy, and we never receive your payment details. Verifying and restoring your purchases only goes through the App Store: no other service receives any information about your purchases.</p>
+      <p>Purchases are paid through the App Store on iPhone and through Google Play on Android: Apple or Google processes payment under its own privacy policy, and we never receive your payment details. Verifying and restoring your purchases only goes through the App Store or Google Play (on Android, through the Google Play Billing library): no other service receives any information about your purchases.</p>
+      <!-- TODO: once the Google Play listing is published, link it here (and add the policy URL in the Play Console). No Google Play listing exists yet. -->
+
+      <h3>Android permissions and Google’s Play Billing library</h3>
+      <p>The Android app declares only three permissions: internet access (to reach Strava and the token function), network state, and the Google Play purchase permission. It requests no access to your storage, photos, camera, location, contacts or microphone.</p>
+      <p>The Google Play Billing library that handles purchases on Android is provided by Google and includes Google’s own diagnostic mechanism (Google Data Transport), which can send Google information about how the library is working. It is a Google component, under Google’s privacy policy; Trente30 sends it no Strava data, activity, photo or visual, and does not use it for analytics.</p>
 
       <h3>What we don’t do</h3>
       <ul>
         <li>No Trente30 account, no sign-up, no email requested.</li>
-        <li>No advertising, no analytics, no trackers, no cross-app tracking.</li>
+        <li>No advertising, no analytics and no trackers of our own, no cross-app tracking.</li>
         <li>No selling or sharing of data for commercial purposes.</li>
         <li>This website uses no cookies and loads no external resources.</li>
       </ul>
@@ -74,8 +79,9 @@
           <thead><tr><th>Provider</th><th>Role</th><th>Data involved</th></tr></thead>
           <tbody>
             <tr><td>Strava, Inc. (United States)</td><td>Source of your activities</td><td>Those of your Strava account, according to the permissions you grant</td></tr>
-            <tr><td>Cloudflare, Inc. (United States)</td><td>Hosting of the token exchange function</td><td>Strava sign-in code and tokens (in transit, not stored), IP address</td></tr>
-            <tr><td>Apple Inc.</td><td>App Store, payment, iOS Keychain</td><td>Purchases, under Apple’s policy</td></tr>
+            <tr><td>Cloudflare, Inc. (United States)</td><td>Hosting of the token exchange function</td><td>Strava sign-in code and tokens (in transit); Strava ID, encrypted renewal token and date of last use (stored); IP address</td></tr>
+            <tr><td>Apple Inc.</td><td>App Store (iPhone), payment, iOS Keychain</td><td>Purchases, under Apple’s policy</td></tr>
+            <tr><td>Google LLC</td><td>Google Play (Android distribution), Google Play Billing (purchases)</td><td>Purchases, under Google’s policy; diagnostic information from the Play Billing library (no Strava data)</td></tr>
             <tr><td>GitHub, Inc. (United States)</td><td>Hosting of this website</td><td>Technical connection data (IP address)</td></tr>
           </tbody>
         </table>
@@ -90,18 +96,19 @@
 
       <h2>5. How long</h2>
       <ul>
-        <li>Cached activities: at most 7 days, and until you disconnect from Strava in the app or delete the app. Strava tokens: until you disconnect or delete the app.</li>
+        <li>Cached activities: at most 7 days, and until you disconnect from Strava in the app or delete the app. Strava tokens on the phone: until you disconnect or delete the app.</li>
+        <li>Record kept by the token function (Strava ID, encrypted renewal token, date of last use): deleted when Strava notifies us that you revoked Trente30’s access (from the app or from Strava), and in any case after 30 days without use, when access is automatically revoked.</li>
         <li>Preferences and compositions: until you delete the app.</li>
-        <li>Purchases: kept by Apple as long as needed to restore them and to meet legal obligations.</li>
+        <li>Purchases: kept by Apple or Google as long as needed to restore them and to meet legal obligations.</li>
       </ul>
 
       <h2>6. Deleting your data and revoking access</h2>
       <ul>
-        <li>In the app: Settings → “Disconnect” revokes access at Strava and erases tokens and cache from the phone.</li>
-        <li>On Strava: Settings → My Apps, then revoke Trente30’s access.</li>
+        <li>In the app: Settings → “Disconnect” revokes access at Strava and erases tokens and cache from the phone. Strava then notifies the token function, which deletes its record.</li>
+        <li>On Strava: Settings → My Apps, then revoke Trente30’s access. The token function’s record is deleted in the same way.</li>
         <li>Deleting the app erases all the data it stored on your phone.</li>
       </ul>
-      <p>As Trente30 has no account and no user database, there is no other data to delete on our side.</p>
+      <p>Trente30 has no account and stores no activity: apart from this record, deleted at the latest after 30 days without use, there is no other data to delete on our side.</p>
 
       <h2>7. Your rights</h2>
       <p>You have the right to access, rectify, erase, object to, restrict and port your data, and to withdraw your consent. To exercise them, write to <a href="mailto:support@tecknologiks.com">support@tecknologiks.com</a>. You can also lodge a complaint with your data protection authority (in France, the CNIL: <a href="https://www.cnil.fr">www.cnil.fr</a>).</p>
